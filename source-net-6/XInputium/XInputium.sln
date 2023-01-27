@@ -7,11 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XInputium", "XInputium\XInp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XInputium.Preview", "XInputium.Preview\XInputium.Preview.csproj", "{1F2144C9-D489-40DB-8C0F-3B49BC17FE19}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Info", "Info", "{2DEF10EF-1098-4260-A3E4-B4CF581684C1}"
-	ProjectSection(SolutionItems) = preProject
-		License.txt = License.txt
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XInputiumFK", "XInputiumFK\XInputiumFK.csproj", "{BDE1DA98-7696-476B-9276-1F07FA14C672}"
 EndProject
 Global

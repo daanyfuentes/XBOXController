@@ -1,12 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>bde1da98-7696-476b-9276-1f07fa14c672</ProjectGuid>
+    <ProjectGuid>{BDE1DA98-7696-476B-9276-1F07FA14C672}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
+    <LangVersion>10.0</LangVersion>
     <RootNamespace>XInputiumFK</RootNamespace>
     <AssemblyName>XInputiumFK</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -21,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,26 +31,88 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ActivationInputEvent.cs" />
+    <Compile Include="ActivationInputEventArgs.cs" />
+    <Compile Include="ActivationInputEventHandler.cs" />
+    <Compile Include="ActivationInputEventTriggerMode.cs" />
+    <Compile Include="DigitalButton.cs" />
+    <Compile Include="DigitalButtonEventArgs.cs" />
+    <Compile Include="DigitalButtonEventHandler.cs" />
+    <Compile Include="DigitalButtonInputEvent.cs" />
+    <Compile Include="DigitalButtonInputEventArgs.cs" />
+    <Compile Include="DigitalButtonInputEventHandler.cs" />
+    <Compile Include="DigitalButtonInputEventMode.cs" />
+    <Compile Include="DigitalButtonUpdateCallback.cs" />
+    <Compile Include="EventDispatcherObject.cs" />
+    <Compile Include="EventDispatchMode.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="IInputDeviceState.cs" />
+    <Compile Include="InputDevice.cs" />
+    <Compile Include="InputEvent.cs" />
+    <Compile Include="InputEventArgs.cs" />
+    <Compile Include="InputEventGroup.cs" />
+    <Compile Include="InputEventHandler.cs" />
+    <Compile Include="InputLoopWatch.cs" />
+    <Compile Include="InputMath.cs" />
+    <Compile Include="InputObject.cs" />
+    <Compile Include="InputObjectExtensions.cs" />
+    <Compile Include="Internal\DefaultInputLoopWatch.cs" />
+    <Compile Include="Internal\Statistics\SampledAverage{T}.cs" />
+    <Compile Include="Joystick.cs" />
+    <Compile Include="JoystickDelta.cs" />
+    <Compile Include="JoystickDirection.cs" />
+    <Compile Include="JoystickUpdateCallback.cs" />
+    <Compile Include="LogicalInputDevice.cs" />
+    <Compile Include="ModifierFunction.cs" />
+    <Compile Include="ModifierFunctionGroup.cs" />
+    <Compile Include="ModifierFunctions\CommonModifierFunctions.cs" />
+    <Compile Include="ModifierFunctions\NonLinearFunctions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepeatDigitalButtonInputEvent.cs" />
+    <Compile Include="SlimJoystick.cs" />
+    <Compile Include="SlimTrigger.cs" />
+    <Compile Include="Trigger.cs" />
+    <Compile Include="TriggerUpdateCallback.cs" />
+    <Compile Include="XInput\Internal\Win32\NativeMethods.cs" />
+    <Compile Include="XInput\Internal\Win32\Win32ErrorCodes.cs" />
+    <Compile Include="XInput\Internal\Win32\XINPUT_GAMEPAD.cs" />
+    <Compile Include="XInput\Internal\Win32\XINPUT_GAMEPAD_wButtons.cs" />
+    <Compile Include="XInput\Internal\Win32\XINPUT_STATE.cs" />
+    <Compile Include="XInput\Internal\Win32\XINPUT_VIBRATION.cs" />
+    <Compile Include="XInput\XButtons.cs" />
+    <Compile Include="XInput\XGamepad.cs" />
+    <Compile Include="XInput\XInputButton.cs" />
+    <Compile Include="XInput\XInputButtonSet.cs" />
+    <Compile Include="XInput\XInputButtonSetUpdateCallback.cs" />
+    <Compile Include="XInput\XInputDevice.cs" />
+    <Compile Include="XInput\XInputDeviceEventArgs.cs" />
+    <Compile Include="XInput\XInputDeviceManager.cs" />
+    <Compile Include="XInput\XInputDeviceState.cs" />
+    <Compile Include="XInput\XInputUserIndex.cs" />
+    <Compile Include="IsExternalInit.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ace.snk" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>
